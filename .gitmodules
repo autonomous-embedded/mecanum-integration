@@ -7,3 +7,6 @@
 [submodule "tests"]
 	path = tests
 	url = git@github.com:autonomous-embedded/tests.git
+[submodule "mecanum-if"]
+	path = mecanum-if
+	url = git@github.com:autonomous-embedded/mecanum-if.git
