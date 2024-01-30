@@ -7,7 +7,7 @@ CURRENT_DIR=$(pwd)
 all_found=true
 
 # Search for the high-level-system-4wd-mecanum directory in the current directory
-MECANUM_HL_PATH_RELATIVE=$(find . -type d -name "high-level-system-4wd-mecanum" 2>/dev/null)
+MECANUM_HL_PATH_RELATIVE=$(find . -type d -name "high-level-system-4wd-mecanum" | head -n 1; 2>/dev/null)
 if [ -n "$MECANUM_HL_PATH_RELATIVE" ]; then
     MECANUM_HL_PATH="${CURRENT_DIR}/${MECANUM_HL_PATH_RELATIVE#./}"
     export MECANUM_HL_PATH
@@ -16,19 +16,10 @@ else
 fi
 
 # Search for the low-level-system-4wd-mecanum directory in the current directory
-MECANUM_LL_PATH_RELATIVE=$(find . -type d -name "low-level-system-4wd-mecanum" 2>/dev/null)
+MECANUM_LL_PATH_RELATIVE=$(find . -type d -name "low-level-system-4wd-mecanum" | head -n 1; 2>/dev/null)
 if [ -n "$MECANUM_LL_PATH_RELATIVE" ]; then
     MECANUM_LL_PATH="${CURRENT_DIR}/${MECANUM_LL_PATH_RELATIVE#./}"
     export MECANUM_LL_PATH
-else
-    all_found=false
-fi
-
-# Search for the ES_2023-2024_Pluta_Koziarski_Mecanum.sh file in the current directory
-MECANUM_RUN_PATH_RELATIVE=$(find . -type f -name "ES_2023-2024_Pluta_Koziarski_Mecanum.sh" 2>/dev/null)
-if [ -n "$MECANUM_RUN_PATH_RELATIVE" ]; then
-    MECANUM_RUN_PATH="${CURRENT_DIR}/${MECANUM_RUN_PATH_RELATIVE#./}"
-    export MECANUM_RUN_PATH
 else
     all_found=false
 fi
@@ -53,11 +44,5 @@ if [ -n "$MECANUM_LL_PATH" ]; then
     echo "MECANUM_LL_PATH set to $MECANUM_LL_PATH"
 else
     echo "low-level-system-4wd-mecanum directory not found"
-fi
-
-if [ -n "$MECANUM_RUN_PATH" ]; then
-    echo "MECANUM_RUN_PATH set to $MECANUM_RUN_PATH"
-else
-    echo "ES_2023-2024_Pluta_Koziarski_Mecanum.sh file not found"
 fi
 
