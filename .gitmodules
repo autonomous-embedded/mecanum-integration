@@ -4,6 +4,6 @@
 [submodule "low-level-system-4wd-mecanum"]
 	path = low-level-system-4wd-mecanum
 	url = git@github.com:autonomous-embedded/low-level-system-4wd-mecanum.git
-[submodule "tests"]
-	path = tests
-	url = git@github.com:autonomous-embedded/tests.git
+[submodule "mecanum-if"]
+	path = mecanum-if
+	url = git@github.com:autonomous-embedded/mecanum-if.git

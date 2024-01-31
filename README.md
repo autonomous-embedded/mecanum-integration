@@ -29,7 +29,16 @@ For the high-level system, it's best to go with Ubuntu 20.04 LTS. Anything else 
 
 ## How to work with this repository?
 
-To start working, clone the repository by running: `git clone --recurse-submodules git@github.com:autonomous-embedded/mecanum-integration.git`.
+To start working, clone the repository by running: 
+```sh
+git clone --recurse-submodules git@github.com:autonomous-embedded/mecanum-integration.git
+```
+in case `--recurse-submodules` was forgotten:
+```sh
+# after clone...
+git submodule init
+git submodule update
+```
 
 After you've cloned this repository, you can start working with the source code & the documentation we have. You'll probably need to install some dependencies.
 
