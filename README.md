@@ -2,28 +2,45 @@
 
 Repository for the high-level and low-level control system for a 4WD mecanum car. Developed for the "Embedded Systems 2" class in the Cyber-Physical Systems specialization for Automation and Robotics, Faculty of Electrical Engineering, Automatics, Computer Science and Biomedical Engineering.
 
-## Tech stack
+## Systems
+Project consists of two systems:
+ - high-level system - responsible for:
+   - object detection,
+   - path planning,
+   - calculating and sending commands to the low-level system.
+ 
+ - low-level system - responsible for:
+   - receiving commands from the high-level system,
+   - controlling the motors of the robot accordingly to the received commands,
+   - applying the PID control to the motors.
+
+Basic schematic of both of the systems, and the communication between them, is presented below:
+
+![Systems schematic](images/project_schematic.png)
+
+### Tech stack
 
 High-level system:
  - ROS Noetic (ROS1)
  - Language of implementation: C++
 
 Low-level system:
- - Arduino (PlatformIO)
- - Language of implementation: Embedded C
+ - Toolset: PlatformIO
+ - Framework: Arduino
+ - Language of implementation: C++
 
-## Hardware
+### Hardware
 
 High-level system:
- - Jetson Orin NX (some custom BSP - don't recall which one)
+ - Jetson Orin NX
  - Intel Realsense Depth Camera D435i
 
 Low-level system:
- - some old Arduino board + extension board
+ - Arduino Diecimila (ATmega328P)
 
-## Platform
+## Documentation
 
-For the high-level system, it's best to go with Ubuntu 20.04 LTS. Anything else has not been supported. Ever. And probably won't be.
+Documentation for both of the systems can be generated using Docsify tool. To generate the documentation refer to [this](doc_generation.md) document.
 
 ## How to work with this repository?
 
@@ -44,11 +61,13 @@ After you've cloned this repository, you can start working with the source code 
 
 ### High-level system
 
-You will need these for sure:
- - ROS Noetic
- - librealsense
+For the high-level system, required dependencies are:
+ - ROS Noetic,
+ - librealsense.
+
+As an OS for the high-level system, we recommend Ubuntu 20.04 LTS since anything else has not been supported in this repo. Ever. And probably won't be.
 
 ### Low-level system
 
- - dunno
-
+For the low-level system, required dependency is:
+ - PlatformIO.
