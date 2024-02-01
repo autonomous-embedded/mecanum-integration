@@ -2,8 +2,6 @@
 
 Repository for the high-level and low-level control system for a 4WD mecanum car. Developed for the "Embedded Systems 2" class in the Cyber-Physical Systems specialization for Automation and Robotics, Faculty of Electrical Engineering, Automatics, Computer Science and Biomedical Engineering.
 
-Authored by: Natalia Pluta, Robert Koziarski, Mateusz Saternus.
-
 ## Tech stack
 
 High-level system:
