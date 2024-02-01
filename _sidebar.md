@@ -1,4 +1,5 @@
 <!-- _sidebar.md -->
+* [Home](/)
 * [Introduction](README.md)
 * [Authors](authors.md)
 * [High-level system](high-level-system-4wd-mecanum/README.md)
